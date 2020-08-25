@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="62e52fe4-08a0-4d01-8ae5-35fea7381d74" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/ResumeBuilder/JustResume/.browserslistrc" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ResumeBuilder/JustResume/.editorconfig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ResumeBuilder/JustResume/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ResumeBuilder/JustResume/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ResumeBuilder/JustResume/angular.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ResumeBuilder/JustResume/e2e/protractor.conf.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ResumeBuilder/JustResume/e2e/src/app.e2e-spec.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ResumeBuilder/JustResume/e2e/src/app.po.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ResumeBuilder/JustResume/e2e/tsconfig.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ResumeBuilder/JustResume/karma.conf.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ResumeBuilder/JustResume/package-lock.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ResumeBuilder/JustResume/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ResumeBuilder/JustResume/src/app/app-routing.module.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ResumeBuilder/JustResume/src/app/app.component.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ResumeBuilder/JustResume/src/app/app.component.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ResumeBuilder/JustResume/src/app/app.component.spec.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ResumeBuilder/JustResume/src/app/app.component.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ResumeBuilder/JustResume/src/app/app.module.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ResumeBuilder/JustResume/src/assets/.gitkeep" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ResumeBuilder/JustResume/src/environments/environment.prod.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ResumeBuilder/JustResume/src/environments/environment.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ResumeBuilder/JustResume/src/favicon.ico" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ResumeBuilder/JustResume/src/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ResumeBuilder/JustResume/src/main.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ResumeBuilder/JustResume/src/polyfills.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ResumeBuilder/JustResume/src/styles.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ResumeBuilder/JustResume/src/test.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ResumeBuilder/JustResume/tsconfig.app.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ResumeBuilder/JustResume/tsconfig.base.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ResumeBuilder/JustResume/tsconfig.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ResumeBuilder/JustResume/tsconfig.spec.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ResumeBuilder/JustResume/tslint.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ShareMemoryToFrndz/SampleFullStackApplication/MemorySharingGame-ui/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/ShareMemoryToFrndz/SampleFullStackApplication/MemorySharingGame-ui/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ShareMemoryToFrndz/SampleFullStackApplication/MemorySharingGame-ui/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/ShareMemoryToFrndz/SampleFullStackApplication/MemorySharingGame-ui/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ShareMemoryToFrndz/SampleFullStackApplication/MemorySharingGame-ui/proxy.conf.json" beforeDir="false" afterPath="$PROJECT_DIR$/ShareMemoryToFrndz/SampleFullStackApplication/MemorySharingGame-ui/proxy.conf.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ShareMemoryToFrndz/SampleFullStackApplication/MemorySharingGame-ui/src/app/services/memory-sharing-game.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/ShareMemoryToFrndz/SampleFullStackApplication/MemorySharingGame-ui/src/app/services/memory-sharing-game.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ShareMemoryToFrndz/SampleFullStackApplication/MemorySharingGame/memorysharegame.db" beforeDir="false" afterPath="$PROJECT_DIR$/ShareMemoryToFrndz/SampleFullStackApplication/MemorySharingGame/memorysharegame.db" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ShareMemoryToFrndz/SampleFullStackApplication/MemorySharingGame/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/ShareMemoryToFrndz/SampleFullStackApplication/MemorySharingGame/src/main/resources/application.properties" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/ResumeBuilder/JustResume" />
+  </component>
+  <component name="ProjectId" id="1fTx2p8ivQKf7pmhCZdcVfZBBsL" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="62e52fe4-08a0-4d01-8ae5-35fea7381d74" name="Default Changelist" comment="" />
+      <created>1596255679579</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1596255679579</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="209" y="33" key="new project wizard" timestamp="1596255834413">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="209" y="33" key="new project wizard/0.0.1536.824@0.0.1536.824" timestamp="1596255834413" />
+  </component>
+</project>
