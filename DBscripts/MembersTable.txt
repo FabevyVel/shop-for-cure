@@ -1,0 +1,26 @@
+CREATE DATABASE IF NOT EXISTS homeremedies;
+
+CREATE TABLE `homeremedies`.`members` 
+                 ( 
+                             `membership_number` INT  auto_increment,
+                              `username`  VARCHAR(45) NOT NULL, 
+                              `password`  VARCHAR(45) NULL, 
+                              `role`   VARCHAR(5) NULL, 
+                              PRIMARY KEY (`membership_number`) 
+                 );
+                 
+INSERT INTO `homeremedies`.`members`
+(`username`,
+`password`,
+`role`)
+VALUES
+("user_1","1234","U");
+
+INSERT INTO `homeremedies`.`members`
+(`username`,
+`password`,
+`role`)
+VALUES
+("admin_1","1234","A");
+
+select * from `homeremedies`.`members`;
