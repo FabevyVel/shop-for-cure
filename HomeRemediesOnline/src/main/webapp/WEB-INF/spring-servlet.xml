@@ -18,7 +18,6 @@
         <property name="driverClassName" value="com.mysql.jdbc.Driver" />
         <property name="url" value="jdbc:mysql://localhost:3306/homeremedies" />
         <property name="username" value="root" />
-        <property name="password" value="Navis@123" />
         <property name="password" value="Gauti@26" />
     </bean>
     <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
