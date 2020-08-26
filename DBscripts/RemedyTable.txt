@@ -1,0 +1,40 @@
+
+CREATE TABLE `homeremedies`.`diseases` 
+                 ( 
+                             `disease_id` INT  auto_increment,
+                              `disease_name`  VARCHAR(45) NOT NULL, 
+                              PRIMARY KEY (`disease_id`) 
+                 );
+                 
+INSERT INTO `homeremedies`.`diseases`
+(`disease_name`)
+VALUES
+("XYZ");
+
+CREATE TABLE `homeremedies`.`fruits` 
+                 ( 
+                             `fruit_id` INT  auto_increment,
+                              `fruit_name`  VARCHAR(45) NOT NULL, 
+                              `fruit_qty`  INT NOT NULL, 
+                              `fruit_cost` DECIMAL(19,2) NOT NULL, 
+                              PRIMARY KEY (`fruit_id`) 
+                 );
+                 
+CREATE TABLE `homeremedies`.`herbs` 
+                 ( 
+                             `herb_id` INT  auto_increment,
+                              `herb_name`  VARCHAR(45) NOT NULL, 
+                              `herb_description`  VARCHAR(45) NOT NULL, 
+                              `herb_qty`  INT NOT NULL, 
+                              `herb_cost` DECIMAL(19,2) NOT NULL, 
+                              PRIMARY KEY (`herb_id`) 
+                 );     
+                 
+CREATE TABLE `homeremedies`.`remedies` 
+                 ( 
+                              `remedy_id` INT  auto_increment,
+                              `disease_id` INT NOT NULL, 
+                              `fruit_herb_id`  INT, 
+                             `category`  VARCHAR(4) NOT NULL, 
+                              PRIMARY KEY (`remedy_id`) 
+                 );                  
