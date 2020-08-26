@@ -5,7 +5,8 @@
        xsi:schemaLocation=" http://www.springframework.org/schema/beans
        http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
        http://www.springframework.org/schema/context
-       http://www.springframework.org/schema/context/spring-context-3.0.xsd">
+       http://www.springframework.org/schema/context/spring-context-3.0.xsd"
+       xmlns:mvc="http://www.springframework.org/schema/mvc">
     <context:component-scan base-package="com.cts" />
     <context:annotation-config />
 
@@ -17,7 +18,7 @@
         <property name="driverClassName" value="com.mysql.jdbc.Driver" />
         <property name="url" value="jdbc:mysql://localhost:3306/homeremedies" />
         <property name="username" value="root" />
-        <property name="password" value="password" />
+        <property name="password" value="Navis@123" />
     </bean>
     <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
         <property name="prefix" value="/views/" />

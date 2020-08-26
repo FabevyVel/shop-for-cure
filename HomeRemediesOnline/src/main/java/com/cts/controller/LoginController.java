@@ -37,7 +37,7 @@ public class LoginController {
         Member authenticatedMember = memberService.authenticateMember(member);
         if (authenticatedMember != null) {
             if (authenticatedMember.getRoles() == Roles.ADMIN) {
-                view = new ModelAndView("admin");
+                view = new ModelAndView("add-disease");
             } else {
                 view = new ModelAndView("user");
             }
