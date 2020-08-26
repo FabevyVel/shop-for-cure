@@ -19,7 +19,7 @@ public class AdminController {
 
     @RequestMapping(value = "/addDisease", method = RequestMethod.POST)
     public ModelAndView addDisease(@ModelAttribute("Disease") Disease disease) {
-        ModelAndView view = new ModelAndView("admin");
+        ModelAndView view = new ModelAndView("add-disease");
         try {
             adminService.addDisease(disease);
             view.addObject("message", "Disease added successfully");
@@ -31,7 +31,7 @@ public class AdminController {
 
     @RequestMapping(value = "/addFruit", method = RequestMethod.POST)
     public ModelAndView addFruit(@ModelAttribute("Fruit") Fruit fruit) {
-        ModelAndView view = new ModelAndView("admin");
+        ModelAndView view = new ModelAndView("add-fruit");
         try {
             adminService.addFruit(fruit);
             view.addObject("message", "Fruit added successfully");
@@ -43,7 +43,7 @@ public class AdminController {
 
     @RequestMapping(value = "/addHerb", method = RequestMethod.POST)
     public ModelAndView addHerb(@ModelAttribute("Herb") Herb herb) {
-        ModelAndView view = new ModelAndView("admin");
+        ModelAndView view = new ModelAndView("add-herb");
         try {
             adminService.addHerb(herb);
             view.addObject("message", "Herb added successfully");
@@ -54,8 +54,8 @@ public class AdminController {
     }
 
     @RequestMapping(value = "/addRemedy", method = RequestMethod.POST)
-    public ModelAndView addHerb(@ModelAttribute("Remedy") Remedy remedy) {
-        ModelAndView view = new ModelAndView("admin");
+    public ModelAndView addRemedy(@ModelAttribute("Remedy") Remedy remedy) {
+        ModelAndView view = new ModelAndView("add-remedy");
         try {
             adminService.addRemedy(remedy);
             view.addObject("message", "remedy added successfully");
