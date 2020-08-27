@@ -23,7 +23,7 @@ public class AdminViewController {
     @RequestMapping(value = "/add-disease", method = RequestMethod.GET)
     public ModelAndView addDisease() {
         ModelAndView view = new ModelAndView("add-disease");
-        view.addObject("fruit", new Disease());
+        view.addObject("disease", new Disease());
         return view;
     }
 

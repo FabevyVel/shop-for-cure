@@ -15,8 +15,8 @@ public class AdminDaoImpl implements AdminDao {
 
     @Override
     public void addDisease(Disease disease) {
-        String insertQuery = "insert into diseases (disease_name) values (?)";
-        jdbcTemplate.update(insertQuery, disease.getDiseaseName());
+        String insertQuery = "insert into diseases (disease_name, disease_description) values (?,?)";
+        jdbcTemplate.update(insertQuery, disease.getDiseaseName(), disease.getDiseaseDescription());
     }
 
     @Override
