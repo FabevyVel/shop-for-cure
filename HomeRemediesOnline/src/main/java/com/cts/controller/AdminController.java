@@ -9,6 +9,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
 
 @Controller
 public class AdminController {
@@ -54,10 +57,14 @@ public class AdminController {
     }
 
     @RequestMapping(value = "/addRemedy", method = RequestMethod.POST)
-    public ModelAndView addRemedy(@ModelAttribute("remedy") Remedy remedy) {
+    public ModelAndView addRemedy(HttpServletRequest request, HttpServletResponse response, @ModelAttribute("dataList") DataList dataList) {
         ModelAndView view = new ModelAndView("add-remedy");
         try {
-            adminService.addRemedy(remedy);
+            String[] diseaseId = request.getParameterValues("selectedDiseases");
+            String[] fruitId = request.getParameterValues("selectedFruits");
+            String[] herbId = request.getParameterValues("selectedHerbs");
+            adminService.addRemedy(diseaseId,fruitId,herbId);
+            view.addObject("dataList", adminService.getAllData());
             view.addObject("message", "remedy added successfully");
         } catch (Exception e) {
             view.addObject("message", ERROR_MSG);
