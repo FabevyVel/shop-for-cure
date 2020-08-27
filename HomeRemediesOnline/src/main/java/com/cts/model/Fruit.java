@@ -4,6 +4,7 @@ public class Fruit {
 
     private int fruitId;
     private String fruitName;
+    private String fruitDescription;
     private int fruitQuantity;
     private double fruitCost;
 
@@ -22,6 +23,15 @@ public class Fruit {
     public void setFruitName(String fruitName) {
         this.fruitName = fruitName;
     }
+
+    public String getFruitDescription() {
+        return fruitDescription;
+    }
+
+    public void setFruitDescription(String fruitDescription) {
+        this.fruitDescription = fruitDescription;
+    }
+
 
     public int getFruitQuantity() {
         return fruitQuantity;

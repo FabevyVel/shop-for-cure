@@ -1,5 +1,6 @@
 
-<%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
+<%@ page import = "java.io.*,java.util.*" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -14,16 +15,54 @@
     </style>
 </head>
 <body>
-<h3>Welcome ${sessionScope.username} !!!!!</h3>
-<nav class="nav flex-column">
-    <a class="nav-link active" href="add-disease">Add Disease</a>
-    <a class="nav-link" href="add-fruit">Add Fruit</a>
-    <a class="nav-link" href="add-herb">Add Herb</a>
-    <a class="nav-link" href="add-remedy">Add Remedy</a>
-</nav>
-
-<div>
-    Add Fruit
+<div class="row">
+    <div class="col-md-2 admin-nav">
+        <nav class="nav flex-column">
+            <a class="nav-link" href="add-disease">Add Disease</a>
+            <a class="nav-link active" href="add-fruit">Add Fruit</a>
+            <a class="nav-link" href="add-herb">Add Herb</a>
+            <a class="nav-link" href="add-remedy">Add Remedy</a>
+        </nav>
+    </div>
+    <div class="right-side-page col-md-10">
+            <form:form id="addFruitForm" modelAttribute="fruit" action="addFruit" method="post">
+                <div class="form-group row">
+                    <div class="col-md-3 text-right">
+                        <form:label path="fruitName">Fruit Name: </form:label>
+                    </div>
+                    <div class="col-md-9">
+                        <form:input path="fruitName" name="fruitName" id="fruitName" />
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <div class="col-md-3 text-right">
+                        <form:label path="fruitDescription">Fruit Desc: </form:label>
+                    </div>
+                    <div class="col-md-9">
+                        <form:input path="fruitDescription" name="fruitDescription" id="fruitDescription" />
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <div class="col-md-3 text-right">
+                        <form:label path="fruitQuantity">Fruit Quantity: </form:label>
+                    </div>
+                    <div class="col-md-9">
+                        <form:input path="fruitQuantity" name="fruitQuantity" id="fruitQuantity" />
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <div class="col-md-3 text-right">
+                        <form:label path="fruitCost">Fruit Cost: </form:label>
+                    </div>
+                    <div class="col-md-9">
+                        <form:input path="fruitCost" name="fruitCost" id="fruitCost" />
+                    </div>
+                </div>
+                <div class="button-container offset-md-3">
+                    <form:button class="btn-outline-primary" id="Submit" name="Submit">Submit</form:button>
+                </div>
+            </form:form>
+    </div>
 </div>
 </body>
 </html>
