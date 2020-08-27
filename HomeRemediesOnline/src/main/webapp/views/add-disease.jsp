@@ -15,30 +15,40 @@
         </style>
     </head>
     <body>
-    <div class="row">
-        <div class="col-md-3">
-            <nav class="nav flex-column">
-                <a class="nav-link active" href="add-disease">Add Disease</a>
-                <a class="nav-link" href="add-fruit">Add Fruit</a>
-                <a class="nav-link" href="add-herb">Add Herb</a>
-                <a class="nav-link" href="add-remedy">Add Remedy</a>
-            </nav>
-        </div>
-        <div class="col-md-9">
-        <form:form id="addDiseaseForm" modelAttribute="disease" action="addDisease" method="post">
-            <div>${disease}</div>
-            <div class="form-group">
-                <form:label path="diseaseName">Disease Name: </form:label>
-                <form:input path="diseaseName" name="diseaseName" id="diseaseName" />
+        <div class="row">
+            <div class="col-md-2 admin-nav">
+                <nav class="nav flex-column">
+                    <a class="nav-link active" href="add-disease">Add Disease</a>
+                    <a class="nav-link" href="add-fruit">Add Fruit</a>
+                    <a class="nav-link" href="add-herb">Add Herb</a>
+                    <a class="nav-link" href="add-remedy">Add Remedy</a>
+                </nav>
             </div>
-            <div class="form-group">
-                <form:label path="diseaseDescription">Description Desc: </form:label>
-                <form:input path="diseaseDescription" name="diseaseDescription" id="diseaseDescription" />
-
+            <div class="col-md-10">
+                <div class="right-side-page">
+                <form:form id="addDiseaseForm" modelAttribute="disease" action="addDisease" method="post">
+                    <div class="form-group row">
+                        <div class="col-md-3 text-right">
+                            <form:label path="diseaseName">Disease Name: </form:label>
+                        </div>
+                        <div class="col-md-8">
+                            <form:input path="diseaseName" name="diseaseName" id="diseaseName" />
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <div class="col-md-3 text-right">
+                             <form:label path="diseaseDescription">Disease Description: </form:label>
+                        </div>
+                        <div class="col-md-8">
+                            <form:textarea path="diseaseDescription" name="diseaseDescription" id="diseaseDescription" />
+                        </div>
+                    </div>
+                    <div class="button-container offset-md-3">
+                        <form:button class="btn btn-outline-primary" id="submit" name="submit">Submit</form:button>
+                    </div>
+                </form:form>
+                </div>
             </div>
-                <form:button id="Submit" name="Submit">Submit</form:button>
-        </form:form>
         </div>
-    </div>
     </body>
 </html>

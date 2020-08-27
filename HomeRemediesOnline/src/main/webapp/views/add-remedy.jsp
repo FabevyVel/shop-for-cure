@@ -1,5 +1,6 @@
 
-<%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
+<%@ page import = "java.io.*,java.util.*" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -14,16 +15,21 @@
     </style>
 </head>
 <body>
-<h3>Welcome ${sessionScope.username} !!!!!</h3>
-<nav class="nav flex-column">
-    <a class="nav-link active" href="add-disease">Add Disease</a>
-    <a class="nav-link" href="add-fruit">Add Fruit</a>
-    <a class="nav-link" href="add-herb">Add Herb</a>
-    <a class="nav-link" href="add-remedy">Add Remedy</a>
-</nav>
-
-<div>
-    Add Remedy
+<div class="row">
+    <div class="col-md-2 admin-nav">
+        <nav class="nav flex-column">
+            <a class="nav-link" href="add-disease">Add Disease</a>
+            <a class="nav-link" href="add-fruit">Add Fruit</a>
+            <a class="nav-link" href="add-herb">Add Herb</a>
+            <a class="nav-link active" href="add-remedy">Add Remedy</a>
+        </nav>
+    </div>
+    <div class="right-side-page col-md-10">
+            <form:form id="addRemedyForm" modelAttribute="remedy" action="addRemedy" method="post">
+                Add Remedy
+            </form:form>
+        </div>
+    </div>
 </div>
 </body>
 </html>

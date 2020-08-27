@@ -21,13 +21,13 @@ public class AdminDaoImpl implements AdminDao {
 
     @Override
     public void addFruit(Fruit fruit) {
-        String insertQuery = "insert into fruits (fruit_name,fruit_qty,fruit_cost) values (?,?,?)";
-        jdbcTemplate.update(insertQuery, fruit.getFruitName(), fruit.getFruitQuantity(), fruit.getFruitCost());
+        String insertQuery = "insert into fruits (fruit_name, fruit_description, fruit_qty, fruit_cost) values (?,?,?,?)";
+        jdbcTemplate.update(insertQuery, fruit.getFruitName(), fruit.getFruitDescription(), fruit.getFruitQuantity(), fruit.getFruitCost());
     }
 
     @Override
     public void addHerb(Herb herb) {
-        String insertQuery = "insert into herbs (herb_name,herb_description,herb_qty,herb_cost) values (?,?,?,?)";
+        String insertQuery = "insert into herbs (herb_name,herb_description, herb_qty, herb_cost) values (?,?,?,?)";
         jdbcTemplate.update(insertQuery, herb.getHerbName(), herb.getHerbDescription(), herb.getHerbQuantity(), herb.getHerbCost());
     }
 
