@@ -41,6 +41,10 @@ input, textarea {
     min-width: 350px;
 }
 
+input[type="checkbox"] {
+    min-width: auto;
+}
+
 textarea {
     height: 100px;
 }
