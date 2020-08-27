@@ -8,8 +8,9 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-    import org.springframework.web.bind.annotation.SessionAttributes;
-    import org.springframework.web.servlet.ModelAndView;
+import org.springframework.web.bind.annotation.SessionAttributes;
+import org.springframework.web.servlet.ModelAndView;
+import com.cts.model.Disease;
 
 @Controller
 @SessionAttributes("username")
@@ -38,6 +39,7 @@ public class LoginController {
         if (authenticatedMember != null) {
             if (authenticatedMember.getRoles() == Roles.ADMIN) {
                 view = new ModelAndView("add-disease");
+                view.addObject("disease", new Disease());
             } else {
                 view = new ModelAndView("user");
             }

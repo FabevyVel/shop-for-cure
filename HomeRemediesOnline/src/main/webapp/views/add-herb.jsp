@@ -1,5 +1,6 @@
 
-<%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
+<%@ page import = "java.io.*,java.util.*" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -14,16 +15,37 @@
     </style>
 </head>
 <body>
-<h3>Welcome ${sessionScope.username} !!!!!</h3>
-<nav class="nav flex-column">
-    <a class="nav-link active" href="add-disease">Add Disease</a>
-    <a class="nav-link" href="add-fruit">Add Fruit</a>
-    <a class="nav-link" href="add-herb">Add Herb</a>
-    <a class="nav-link" href="add-remedy">Add Remedy</a>
-</nav>
-
-<div>
-    Add Herb
+<div class="row">
+    <div class="col-md-2 admin-nav">
+        <nav class="nav flex-column">
+            <a class="nav-link" href="add-disease">Add Disease</a>
+            <a class="nav-link" href="add-fruit">Add Fruit</a>
+            <a class="nav-link active" href="add-herb">Add Herb</a>
+            <a class="nav-link" href="add-remedy">Add Remedy</a>
+        </nav>
+    </div>
+    <div class="right-side-page col-md-10">
+            <form:form id="addHerbForm" modelAttribute="herb" action="addHerb" method="post">
+                <div class="form-group row">
+                    <form:label class="col-md-6" path="herbName">Fruit Name: </form:label>
+                    <form:input class="col-md-6" path="herbName" name="herbName" id="herbName" />
+                </div>
+                <div class="form-group row">
+                    <form:label class="col-md-6" path="herbDescription">Fruit Desc: </form:label>
+                    <form:input class="col-md-6" path="herbDescription" name="herbDescription" id="herbDescription" />
+                </div>
+                <div class="form-group row">
+                    <form:label class="col-md-6" path="herbQuantity">Fruit Name: </form:label>
+                    <form:input class="col-md-6" path="herbQuantity" name="herbQuantity" id="herbQuantity" />
+                </div>
+                <div class="form-group row">
+                    <form:label class="col-md-6" path="herbCost">Fruit Cost: </form:label>
+                    <form:input class="col-md-6" path="herbCost" name="herbQuantity" id="herbCost" />
+                </div>
+                <form:button class="btn-outline-primary" id="Submit" name="Submit">Submit</form:button>
+            </form:form>
+        </div>
+    </div>
 </div>
 </body>
 </html>
