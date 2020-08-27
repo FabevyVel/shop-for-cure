@@ -1,5 +1,6 @@
 package com.cts.controller;
 
+import com.cts.dao.AdminDao;
 import com.cts.dao.MemberDao;
 import com.cts.model.*;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,7 +15,7 @@ import org.springframework.web.servlet.ModelAndView;
 public class AdminViewController {
 
     @Autowired
-    MemberDao memberService;
+    AdminDao adminService;
 
     @RequestMapping(value = "/add-disease", method = RequestMethod.GET)
     public ModelAndView addDisease() {
@@ -40,7 +41,7 @@ public class AdminViewController {
     @RequestMapping(value = "/add-remedy", method = RequestMethod.GET)
     public ModelAndView addRemedy() {
         ModelAndView view = new ModelAndView("add-remedy");
-        view.addObject("dataList", new AdminController().getAllData());
+        view.addObject("dataList", adminService.getAllData());
         view.addObject("remedy", new Remedy());
         return view;
     }

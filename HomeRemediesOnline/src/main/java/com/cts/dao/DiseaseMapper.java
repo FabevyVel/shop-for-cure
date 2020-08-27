@@ -12,6 +12,7 @@ public class DiseaseMapper implements RowMapper<Disease> {
         Disease disease = new Disease();
         disease.setDiseaseId(resultSet.getInt(1));
         disease.setDiseaseName(resultSet.getString(2));
+        disease.setDiseaseDescription(resultSet.getString(3));
         return disease;
     }
 }
