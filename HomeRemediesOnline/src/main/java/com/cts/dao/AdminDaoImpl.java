@@ -1,9 +1,6 @@
 package com.cts.dao;
 
-import com.cts.model.Disease;
-import com.cts.model.Fruit;
-import com.cts.model.Herb;
-import com.cts.model.Remedy;
+import com.cts.model.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 
@@ -43,5 +40,23 @@ public class AdminDaoImpl implements AdminDao {
     public void insertRemedyDetails(int diseaseId, int fruit_herb_Id, String category) {
         String insertQuery = "insert into remedies (disease_id,fruit_herb_id,category) values (?,?,?)";
         jdbcTemplate.update(insertQuery, diseaseId, fruit_herb_Id, category);
+    }
+
+    @Override
+    public DataList getAllData(){
+        String getDiseaseQuery =  "select * from diseases";
+        List<Disease> diseases = jdbcTemplate.query(getDiseaseQuery, new DiseaseMapper());
+
+        String getFruitsQuery = "select * from fruits";
+        List<Fruit> fruits = jdbcTemplate.query(getFruitsQuery,new FruitMapper());
+
+        String getHerbsQuery = "select * from herbs";
+        List<Herb> herbs = jdbcTemplate.query(getHerbsQuery,new HerbMapper());
+
+        DataList dataList = new DataList();
+        dataList.setDiseaseList(diseases);
+        dataList.setFruitList(fruits);
+        dataList.setHerbList(herbs);
+        return dataList;
     }
 }

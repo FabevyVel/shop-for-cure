@@ -1,6 +1,6 @@
 package com.cts.controller;
 
-    import com.cts.dao.MemberDao;
+import com.cts.dao.MemberDao;
 import com.cts.model.Roles;
 import com.cts.model.Member;
 import org.springframework.beans.factory.annotation.Autowired;

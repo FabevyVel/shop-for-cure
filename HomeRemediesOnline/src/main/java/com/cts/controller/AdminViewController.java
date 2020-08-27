@@ -1,11 +1,7 @@
 package com.cts.controller;
 
 import com.cts.dao.MemberDao;
-import com.cts.model.Member;
-import com.cts.model.Fruit;
-import com.cts.model.Herb;
-import com.cts.model.Remedy;
-import com.cts.model.Disease;
+import com.cts.model.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -23,7 +19,7 @@ public class AdminViewController {
     @RequestMapping(value = "/add-disease", method = RequestMethod.GET)
     public ModelAndView addDisease() {
         ModelAndView view = new ModelAndView("add-disease");
-        view.addObject("fruit", new Disease());
+        view.addObject("disease", new Disease());
         return view;
     }
 
@@ -44,6 +40,7 @@ public class AdminViewController {
     @RequestMapping(value = "/add-remedy", method = RequestMethod.GET)
     public ModelAndView addRemedy() {
         ModelAndView view = new ModelAndView("add-remedy");
+        view.addObject("dataList", new AdminController().getAllData());
         view.addObject("remedy", new Remedy());
         return view;
     }

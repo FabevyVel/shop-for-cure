@@ -65,5 +65,8 @@ public class AdminController {
         return view;
     }
 
+    public DataList getAllData(){
+        return adminService.getAllData();
+    }
 
 }
