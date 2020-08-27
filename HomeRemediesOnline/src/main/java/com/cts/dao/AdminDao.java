@@ -9,7 +9,7 @@ public interface AdminDao {
 
     void addHerb(Herb herb);
 
-    void addRemedy(Remedy remedy);
+    void addRemedy(String[] diseaseId, String[] fruitId, String[] herbId);
 
     DataList getAllData();
 
