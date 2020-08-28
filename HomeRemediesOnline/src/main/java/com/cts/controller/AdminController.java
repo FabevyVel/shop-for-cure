@@ -25,6 +25,7 @@ public class AdminController {
         ModelAndView view = new ModelAndView("add-disease");
         try {
             adminService.addDisease(disease);
+            view.addObject("disease", new Disease());
             view.addObject("message", "Disease added successfully");
         } catch (Exception e) {
             view.addObject("message", ERROR_MSG);
@@ -37,6 +38,7 @@ public class AdminController {
         ModelAndView view = new ModelAndView("add-fruit");
         try {
             adminService.addFruit(fruit);
+            view.addObject("fruit", new Fruit());
             view.addObject("message", "Fruit added successfully");
         } catch (Exception e) {
             view.addObject("message", ERROR_MSG);
@@ -49,6 +51,7 @@ public class AdminController {
         ModelAndView view = new ModelAndView("add-herb");
         try {
             adminService.addHerb(herb);
+            view.addObject("herb", new Herb());
             view.addObject("message", "Herb added successfully");
         } catch (Exception e) {
             view.addObject("message", ERROR_MSG);
