@@ -7,10 +7,12 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 
 @Controller
@@ -66,10 +68,14 @@ public class AdminController {
             String[] diseaseId = request.getParameterValues("selectedDiseases");
             String[] fruitId = request.getParameterValues("selectedFruits");
             String[] herbId = request.getParameterValues("selectedHerbs");
+            HttpSession session=request.getSession();
+            if(diseaseId!=null) {
+                session.setAttribute("selectedDisease", diseaseId);
+            }
             if(fruitId==null && herbId==null){
                 view.addObject("dataList",adminService.getPossibleRemedies(Integer.parseInt(diseaseId[0])));
             }else {
-                adminService.addRemedy(diseaseId, fruitId, herbId);
+                adminService.addRemedy((String[]) session.getAttribute("selectedDisease"), fruitId, herbId);
                 view.addObject("dataList", adminService.getAllData());
                 view.addObject("message", "remedy added successfully");
             }

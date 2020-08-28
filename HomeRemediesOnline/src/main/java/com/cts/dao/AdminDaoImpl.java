@@ -75,8 +75,8 @@ public class AdminDaoImpl implements AdminDao {
 
     @Override
     public DataList getPossibleRemedies(int diseaseId) {
-        String getDiseaseQuery = "select * from diseases where disease_id = ?";
-        List<Disease> diseases = jdbcTemplate.query(getDiseaseQuery, new DiseaseMapper(), diseaseId);
+        String getDiseaseQuery = "select * from diseases";
+        List<Disease> diseases = jdbcTemplate.query(getDiseaseQuery, new DiseaseMapper());
 
         String getExistingFruitsQuery = "select fruit_herb_id from remedies where disease_id = ? and category=?";
 
