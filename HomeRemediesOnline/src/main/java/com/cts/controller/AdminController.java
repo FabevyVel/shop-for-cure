@@ -63,13 +63,16 @@ public class AdminController {
             String[] diseaseId = request.getParameterValues("selectedDiseases");
             String[] fruitId = request.getParameterValues("selectedFruits");
             String[] herbId = request.getParameterValues("selectedHerbs");
-            adminService.addRemedy(diseaseId,fruitId,herbId);
-            view.addObject("dataList", adminService.getAllData());
-            view.addObject("message", "remedy added successfully");
+            if(fruitId==null && herbId==null){
+                view.addObject("dataList",adminService.getPossibleRemedies(Integer.parseInt(diseaseId[0])));
+            }else {
+                adminService.addRemedy(diseaseId, fruitId, herbId);
+                view.addObject("dataList", adminService.getAllData());
+                view.addObject("message", "remedy added successfully");
+            }
         } catch (Exception e) {
             view.addObject("message", ERROR_MSG);
         }
         return view;
     }
-
 }

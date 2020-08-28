@@ -31,16 +31,30 @@
                         <div class="col-md-3 text-right">
                             <label>Select Disease:</label>
                         </div>
+
                         <div class="col-md-9">
-                            <select path="diseaseList" name="selectedDiseases" id="multiple-diseases">
+                        <form action="addRemedy" method="POST">
+                            <select  onchange="this.form.submit()" path="diseaseList" name="selectedDiseases" id="multiple-diseases">
                                 <c:forEach items="${dataList.diseaseList}" var="disease">
                                     <option value="${disease.diseaseId}">
                                             ${disease.diseaseName}
                                     </option>
                                 </c:forEach>
                             </select>
+                            </form>
                         </div>
                     </div>
+                     <form action="addRemedy" method="POST">
+
+                     <div class="invisible">
+                                                 <select path="diseaseList" name="selectedDiseases" id="multiple-diseases">
+                                                     <c:forEach items="${dataList.diseaseList}" var="disease">
+                                                         <option value="${disease.diseaseId}">
+                                                                 ${disease.diseaseName}
+                                                         </option>
+                                                     </c:forEach>
+                                                 </select>
+                                             </div>
                     <div class="form-group row">
                         <div class="col-md-3 text-right">
                             <label>Select Fruits:</label>
@@ -72,6 +86,7 @@
                     <div class="button-container offset-md-3">
                         <form:button class="btn-outline-primary" id="submit" name="submit">Add Remedy</form:button>
                     </div>
+                     </form>
                     <c:if test="${message != null}">
                         <div class="alert alert-danger" role="alert">${message}</div>
                     </c:if>

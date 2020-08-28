@@ -19,13 +19,10 @@ public class LoginController {
     @Autowired
     MemberDao memberService;
 
-    @RequestMapping(value = "/home", method = RequestMethod.GET)
-    public ModelAndView backToHome() {
-        ModelAndView view = new ModelAndView("index");
-        return view;
-    }
-
-    @RequestMapping(value = "/login", method = RequestMethod.GET)
+    @RequestMapping(value = {
+            "/",
+            "/logOut"
+    }, method = RequestMethod.GET)
     public ModelAndView loginAdmin() {
         ModelAndView view = new ModelAndView("login");
         view.addObject("member", new Member());
@@ -53,9 +50,4 @@ public class LoginController {
         return view;
     }
 
-    @RequestMapping(value = "/logOut", method = RequestMethod.GET)
-    public ModelAndView logOut() {
-        ModelAndView view = new ModelAndView("index");
-        return view;
-    }
 }
