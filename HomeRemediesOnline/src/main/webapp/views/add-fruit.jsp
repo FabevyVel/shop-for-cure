@@ -8,67 +8,80 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
     <title>Admin</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
     <style>
+        <%@include file="css/common.css" %>
         <%@include file="css/main.css" %>
     </style>
 </head>
 <body>
-<div class="row">
-    <div class="col-md-2 admin-nav">
-        <nav class="nav flex-column">
-            <a class="nav-link" href="add-disease">Add Disease</a>
-            <a class="nav-link active" href="add-fruit">Add Fruit</a>
-            <a class="nav-link" href="add-herb">Add Herb</a>
-            <a class="nav-link" href="add-remedy">Add Remedy</a>
-            <a href="logOut">LogOut</a>
-        </nav>
+    <!-- Navigation -->
+    <nav class="navbar navbar-light navbar-fixed-top">
+        <a class="navbar-brand" href="search">Shop For Cure</a>
+        <div class="nav navbar-nav navbar-right">
+            <a class="username">Hi ${sessionScope.username}</a>
+            <a class="" href="logOut">LogOut</a>
+            <a class="go-to-user-btn" href="search">Go to User Flow</a>
+
+        </div>
+    </nav>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-2 admin-nav">
+                <nav class="nav flex-column">
+                    <a class="nav-link" href="add-disease">Add Disease</a>
+                    <a class="nav-link active" href="add-fruit">Add Fruit</a>
+                    <a class="nav-link" href="add-herb">Add Herb</a>
+                    <a class="nav-link" href="add-remedy">Add Remedy</a>
+                </nav>
+            </div>
+            <div class="right-side-page col-md-10">
+                <form:form class="addForm" id="addFruitForm" modelAttribute="fruit" action="addFruit" method="post">
+                    <div class="form-group row">
+                        <div class="col-md-3 text-right">
+                            <form:label path="fruitName">Fruit Name: </form:label>
+                        </div>
+                        <div class="col-md-9">
+                            <form:input path="fruitName" name="fruitName" id="fruitName" required="true"/>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <div class="col-md-3 text-right">
+                            <form:label path="fruitDescription">Fruit Desc: </form:label>
+                        </div>
+                        <div class="col-md-9">
+                            <form:input path="fruitDescription" name="fruitDescription" id="fruitDescription" required="true"/>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <div class="col-md-3 text-right">
+                            <form:label path="fruitQuantity">Fruit Quantity: </form:label>
+                        </div>
+                        <div class="col-md-9">
+                            <form:input path="fruitQuantity" name="fruitQuantity" id="fruitQuantity" required="true"/>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <div class="col-md-3 text-right">
+                            <form:label path="fruitCost">Fruit Cost: </form:label>
+                        </div>
+                        <div class="col-md-9">
+                            <form:input path="fruitCost" name="fruitCost" id="fruitCost" required="true"/>
+                        </div>
+                    </div>
+                    <div class="button-container offset-md-3">
+                        <form:button class="btn-outline-primary" id="Submit" name="Submit">Submit</form:button>
+                    </div>
+                    <c:if test = "${message != null}">
+                        <div class="message offset-md-3 alert alert-success mt-3" role="alert">${message}</div>
+                    </c:if>
+                </form:form>
+            </div>
+        </div>
     </div>
-    <div class="right-side-page col-md-10">
-            <form:form id="addFruitForm" modelAttribute="fruit" action="addFruit" method="post">
-                <div class="form-group row">
-                    <div class="col-md-3 text-right">
-                        <form:label path="fruitName">Fruit Name: </form:label>
-                    </div>
-                    <div class="col-md-9">
-                        <form:input path="fruitName" name="fruitName" id="fruitName" />
-                    </div>
-                </div>
-                <div class="form-group row">
-                    <div class="col-md-3 text-right">
-                        <form:label path="fruitDescription">Fruit Desc: </form:label>
-                    </div>
-                    <div class="col-md-9">
-                        <form:input path="fruitDescription" name="fruitDescription" id="fruitDescription" />
-                    </div>
-                </div>
-                <div class="form-group row">
-                    <div class="col-md-3 text-right">
-                        <form:label path="fruitQuantity">Fruit Quantity: </form:label>
-                    </div>
-                    <div class="col-md-9">
-                        <form:input path="fruitQuantity" name="fruitQuantity" id="fruitQuantity" />
-                    </div>
-                </div>
-                <div class="form-group row">
-                    <div class="col-md-3 text-right">
-                        <form:label path="fruitCost">Fruit Cost: </form:label>
-                    </div>
-                    <div class="col-md-9">
-                        <form:input path="fruitCost" name="fruitCost" id="fruitCost" />
-                    </div>
-                </div>
-                <div class="button-container offset-md-3">
-                    <form:button class="btn-outline-primary" id="Submit" name="Submit">Submit</form:button>
-                </div>
-                <c:if test = "${message != null}">
-                    <div class="alert alert-danger" role="alert">${message}</div>
-                </c:if>
-            </form:form>
-    </div>
-</div>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-multiselect/0.9.13/js/bootstrap-multiselect.js"></script>
 </body>
 </html>

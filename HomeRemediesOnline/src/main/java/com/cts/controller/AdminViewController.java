@@ -42,6 +42,7 @@ public class AdminViewController {
     public ModelAndView addRemedy() {
         ModelAndView view = new ModelAndView("add-remedy");
         view.addObject("dataList", adminService.getAllData());
+        view.addObject("remedy", new Remedy());
         return view;
     }
 

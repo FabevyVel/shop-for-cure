@@ -13,17 +13,19 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
-<%--    <link rel="stylesheet" href="css/style.css" type="text/css">--%>
   <style>
+    <%@include file="css/common.css" %>
     <%@include file="css/style.css" %>
   </style>
 </head>
 <body>
     
   <!-- Navigation -->
-  <nav class="navbar navbar-light bg-light static-top">
-    <div class="container">
-      <a class="navbar-brand" href="#">Shop Cure</a>
+  <nav class="navbar navbar-light navbar-fixed-top">
+    <a class="navbar-brand" href="search">Shop For Cure</a>
+    <div class="nav navbar-nav navbar-right">
+      <a class="username">Hi ${sessionScope.username}</a>
+      <a class="" href="logOut">LogOut</a>
     </div>
   </nav>
 
@@ -36,8 +38,8 @@
     <form:form method="post" action="addTocart" modelAttribute="remedy">
     <div class="row">
       <c:forEach items="${remedy.fruitList}" var="fruit" varStatus="status">
-        <h1 class="mt-0 mb-5">${fruit.fruitName}</h1>
         <div class="col-lg-4 col-sm-6 mb-4">
+          <h3 class="mt-0 mb-2">${fruit.fruitName}</h3>
           <div class="card h-100">
             <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
             <div class="card-body">
@@ -45,6 +47,7 @@
                 <a href="#">${fruit.fruitName}</a>
               </h4>
               <p class="card-text">${fruit.fruitDescription}</p>
+              <p class="card-text">Price/Kg : ${fruit.fruitCost}</p>
             </div>
             <div class="card-footer">
               <label for="">Qty in kg</label>
@@ -62,8 +65,8 @@
     <form:form method="post" action="addTocart" modelAttribute="remedy">
     <div class="row">
       <c:forEach items="${remedy.herbList}" var="herb" varStatus="status">
-        <h1 class="mt-0 mb-5">${herb.herbName}</h1>
         <div class="col-lg-4 col-sm-6 mb-4">
+          <h3 class="mt-0 mb-2">${herb.herbName}</h3>
           <div class="card h-100">
             <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
             <div class="card-body">
@@ -144,31 +147,6 @@
 <%--      </div>--%>
 <%--    </div>--%>
     <!-- /.row -->
-  
-    <!-- Pagination -->
-    <ul class="pagination justify-content-center">
-      <li class="page-item">
-        <a class="page-link" href="#" aria-label="Previous">
-              <span aria-hidden="true">&laquo;</span>
-              <span class="sr-only">Previous</span>
-            </a>
-      </li>
-      <li class="page-item">
-        <a class="page-link" href="#">1</a>
-      </li>
-      <li class="page-item">
-        <a class="page-link" href="#">2</a>
-      </li>
-      <li class="page-item">
-        <a class="page-link" href="#">3</a>
-      </li>
-      <li class="page-item">
-        <a class="page-link" href="#" aria-label="Next">
-              <span aria-hidden="true">&raquo;</span>
-              <span class="sr-only">Next</span>
-            </a>
-      </li>
-    </ul>
   
   </div>
   <!-- /.container -->

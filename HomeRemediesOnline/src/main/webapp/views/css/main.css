@@ -1,17 +1,12 @@
-h3 {
-    background: red;
-}
-nav {
-    height: 100%;
+.right-side-page {
+    background: #f1f1f1;
+    padding-left: 30px !important;
+    padding-top: 40px !important;
 }
 
-.right-side-page {
-    padding-left: 30px !important;
-    padding-top: 150px !important;
-}
 
 .admin-nav, .admin-nav a {
-    background: #f1f1f1;
+    background: #fff;
     color: #000;
     padding: 10px 30px;
 }
@@ -23,10 +18,19 @@ nav {
 .admin-nav {
     padding: 0;
     height: 100vh;
+    padding-top: 20px;
 }
 
 .admin-nav a.active{
-    background: #0DB8DE;
+    color: #0DB8DE;
+    font-weight: bold;
+}
+
+.addForm {
+    background: #ffffff;
+    padding: 30px;
+    width: 60%;
+    box-shadow: 0px 0px 5px darkgrey;
 }
 
 input, textarea {
@@ -86,6 +90,7 @@ textarea {
     padding-left: 15px;
     padding-right: 15px;
 }
+
 .invisible {
   visibility: hidden;
 }

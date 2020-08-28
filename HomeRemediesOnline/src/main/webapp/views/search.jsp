@@ -2,6 +2,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1" %>
 <%@ page session = "false" %>
 <%@ page import = "java.io.*,java.util.*" %>
+<%@ taglib prefix = "c" uri = "http://java.sun.com/jsp/jstl/core" %>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -12,20 +13,21 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
-<%--    <link rel="stylesheet" href="css/style.css" type="text/css">--%>
     <style>
+        <%@include file="css/common.css" %>
         <%@include file="css/style.css" %>
     </style>
 </head>
 <body>
-    
+
   <!-- Navigation -->
-  <nav class="navbar navbar-light bg-light static-top">
-    <div class="container">
-      <a class="navbar-brand" href="#">Shop Cure</a>
-    </div>
+  <nav class="navbar navbar-light static-top">
+      <a class="navbar-brand" href="search">Shop For Cure</a>
+      <div class="nav navbar-nav navbar-right">
+          <a class="username">Hi ${sessionScope.username}</a>
+          <a class="" href="logOut">LogOut</a>
+      </div>
   </nav>
-  <h3>Welcome ${sessionScope.username} !!!!!</h3>
   <header class="masthead text-white text-center">
     <div class="overlay"></div>
     <div class="container">
@@ -61,5 +63,7 @@
           </td>
       </tr>
   </table>
+<script>
+</script>
 </body>
 </html>

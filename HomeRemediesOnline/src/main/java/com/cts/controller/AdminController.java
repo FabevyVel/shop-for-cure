@@ -77,7 +77,7 @@ public class AdminController {
             }else {
                 adminService.addRemedy((String[]) session.getAttribute("selectedDisease"), fruitId, herbId);
                 view.addObject("dataList", adminService.getAllData());
-                view.addObject("message", "remedy added successfully");
+                view.addObject("message", "Remedy added successfully");
             }
         } catch (Exception e) {
             view.addObject("message", ERROR_MSG);
