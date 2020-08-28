@@ -3,6 +3,7 @@ package com.cts.controller;
 import com.cts.dao.MemberDao;
 import com.cts.model.Roles;
 import com.cts.model.Member;
+import com.cts.model.SearchContent;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -38,7 +39,8 @@ public class LoginController {
                 view = new ModelAndView("add-disease");
                 view.addObject("disease", new Disease());
             } else {
-                view = new ModelAndView("user");
+                view = new ModelAndView("search");
+                view.addObject("searchContent", new SearchContent());
             }
             view.addObject("username", authenticatedMember.getUserName());
             view.addObject("member", authenticatedMember);

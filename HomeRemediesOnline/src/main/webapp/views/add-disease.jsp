@@ -17,6 +17,7 @@
         </style>
     </head>
     <body>
+    <h3>Welcome ${sessionScope.username} !!!!!</h3>
         <div class="row">
             <div class="col-md-2 admin-nav">
                 <nav class="nav flex-column">

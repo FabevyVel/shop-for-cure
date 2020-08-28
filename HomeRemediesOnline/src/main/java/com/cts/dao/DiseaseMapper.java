@@ -1,6 +1,8 @@
 package com.cts.dao;
 
 import com.cts.model.Disease;
+import com.cts.model.Member;
+import com.cts.model.Remedy;
 import org.springframework.jdbc.core.RowMapper;
 
 import java.sql.ResultSet;

@@ -11,10 +11,10 @@ public class FruitMapper implements RowMapper<Fruit> {
     public Fruit mapRow(ResultSet resultSet, int i) throws SQLException {
         Fruit fruit = new Fruit();
         fruit.setFruitId(resultSet.getInt(1));
-        fruit.setFruitName(resultSet.getString("fruit_name"));
-        fruit.setFruitCost(resultSet.getDouble("fruit_cost"));
-        fruit.setFruitQuantity(resultSet.getInt("fruit_qty"));
-        fruit.setFruitDescription(resultSet.getString("fruit_description"));
+        fruit.setFruitName(resultSet.getString(2));
+        fruit.setFruitDescription(resultSet.getString(3));
+        fruit.setFruitCost(resultSet.getInt(4));
+        fruit.setFruitQuantity(resultSet.getInt(5));
         return fruit;
     }
 }
