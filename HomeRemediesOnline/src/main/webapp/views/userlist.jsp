@@ -37,7 +37,7 @@
         </div>
         <div class="col-md-10 right-side-page">
             <div class="container">
-                <p>User Info:</p>
+                <h3>User Details</h3>
                 <table class="table table-hover">
                     <thead>
                     <tr>

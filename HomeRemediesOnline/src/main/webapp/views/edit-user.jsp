@@ -37,7 +37,7 @@
                 </nav>
             </div>
             <div class="right-side-page col-md-10">
-                <form:form class="editUser" id="editUserForm" modelAttribute="member" action="updateUser" method="post">
+                <form:form class="editForm" id="editUserForm" modelAttribute="member" action="updateUser" method="post">
                     <div class="form-group row">
                         <div class="col-md-3 text-right">
                             <form:label path="userName">User Name: </form:label>

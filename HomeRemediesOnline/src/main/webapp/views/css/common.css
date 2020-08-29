@@ -37,8 +37,8 @@ h3 {
     background: #fff;
 }
 
-.table th td {
-    background-color: rgba(13, 184, 222,.4);
+.table tr th {
+    background-color: rgba(13, 184, 222,.4) !important;
 }
 .table-hover tbody tr:hover {
     background-color: rgba(13, 184, 222,.2);
