@@ -10,6 +10,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.servlet.ModelAndView;
 
+import javax.servlet.http.HttpServletRequest;
+
 @Controller
 @SessionAttributes("username")
 public class AdminViewController {
@@ -43,6 +45,21 @@ public class AdminViewController {
         ModelAndView view = new ModelAndView("add-remedy");
         view.addObject("dataList", adminService.getAllData());
         view.addObject("remedy", new Remedy());
+        return view;
+    }
+
+    @RequestMapping(value = "/user-list", method = RequestMethod.GET)
+    public ModelAndView getMembers() {
+        ModelAndView view = new ModelAndView("userlist");
+        view.addObject("memberList", adminService.getMembersData());
+        return view;
+    }
+
+    @RequestMapping(value = "/edit-user", method = RequestMethod.GET)
+    public ModelAndView editUser(HttpServletRequest request) {
+        int editUserId = Integer.parseInt(request.getParameter("id"));
+        ModelAndView view = new ModelAndView("edit-user");
+        view.addObject("member", adminService.getMemberById(editUserId));
         return view;
     }
 

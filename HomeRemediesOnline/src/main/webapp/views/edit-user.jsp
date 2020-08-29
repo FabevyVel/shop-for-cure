@@ -37,39 +37,22 @@
                 </nav>
             </div>
             <div class="right-side-page col-md-10">
-                <form:form class="addForm" id="addFruitForm" modelAttribute="fruit" action="addFruit" method="post">
+                <form:form class="editUser" id="editUserForm" modelAttribute="member" action="updateUser" method="post">
                     <div class="form-group row">
                         <div class="col-md-3 text-right">
-                            <form:label path="fruitName">Fruit Name: </form:label>
+                            <form:label path="userName">User Name: </form:label>
                         </div>
                         <div class="col-md-9">
-                            <form:input path="fruitName" name="fruitName" id="fruitName" required="true"/>
+                            <form:input path="userName" name="userName" id="userName" required="true"/>
                         </div>
-                    </div>
-                    <div class="form-group row">
                         <div class="col-md-3 text-right">
-                            <form:label path="fruitDescription">Fruit Desc: </form:label>
+                            <form:label path="userEmail">User Email: </form:label>
                         </div>
                         <div class="col-md-9">
-                            <form:input path="fruitDescription" name="fruitDescription" id="fruitDescription" required="true"/>
+                            <form:input path="userEmail" name="userEmail" id="userEmail" required="true"/>
                         </div>
-                    </div>
-                    <div class="form-group row">
-                        <div class="col-md-3 text-right">
-                            <form:label path="fruitQuantity">Fruit Quantity: </form:label>
+                            <form:input path="userId" name="userId" id="userId" required="true" hidden="true" />
                         </div>
-                        <div class="col-md-9">
-                            <form:input path="fruitQuantity" name="fruitQuantity" id="fruitQuantity" required="true"/>
-                        </div>
-                    </div>
-                    <div class="form-group row">
-                        <div class="col-md-3 text-right">
-                            <form:label path="fruitCost">Fruit Cost: </form:label>
-                        </div>
-                        <div class="col-md-9">
-                            <form:input path="fruitCost" name="fruitCost" id="fruitCost" required="true"/>
-                        </div>
-                    </div>
                     <div class="button-container offset-md-3">
                         <form:button class="btn-outline-primary" id="Submit" name="Submit">Submit</form:button>
                     </div>

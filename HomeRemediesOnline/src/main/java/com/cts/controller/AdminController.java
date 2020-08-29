@@ -4,10 +4,7 @@ import com.cts.dao.AdminDao;
 import com.cts.model.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.SessionAttributes;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpServletRequest;
@@ -21,6 +18,21 @@ public class AdminController {
     private static final String ERROR_MSG = "Oops! Details not added, please try again.";
     @Autowired
     AdminDao adminService;
+
+
+    @RequestMapping(value = "/updateUser", method = RequestMethod.POST)
+    public ModelAndView updateUser(@ModelAttribute("member") Member member) {
+        ModelAndView view = new ModelAndView("edit-user");
+        try {
+            adminService.updateMemberById(member);
+            view.addObject("member", new Member());
+            view.addObject("message", "User updated successfully");
+        } catch (Exception e) {
+            view.addObject("message", ERROR_MSG);
+        }
+        return view;
+    }
+
 
     @RequestMapping(value = "/addDisease", method = RequestMethod.POST)
     public ModelAndView addDisease(@ModelAttribute("disease") Disease disease) {

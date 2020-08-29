@@ -13,8 +13,9 @@ public class MemberMapper implements RowMapper<Member> {
         Member member = new Member();
         member.setUserId(resultSet.getInt(1));
         member.setUserName(resultSet.getString(2));
-        member.setPassword(resultSet.getString(3));
-        if(resultSet.getString(4).equals("A")){
+        member.setUserEmail(resultSet.getString(3));
+        member.setPassword(resultSet.getString(4));
+        if(resultSet.getString(5).equals("A")){
             member.setRoles(Roles.ADMIN);
         }else {
             member.setRoles(Roles.USER);

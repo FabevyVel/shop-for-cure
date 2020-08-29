@@ -36,31 +36,27 @@
             </nav>
         </div>
         <div class="col-md-10 right-side-page">
-            <form:form class="addForm" id="addDiseaseForm" modelAttribute="disease" action="addDisease" method="post">
-                <div class="form-group row">
-                    <div class="col-md-3 text-right">
-                        <form:label path="diseaseName">Disease Name: </form:label>
-                    </div>
-                    <div class="col-md-8">
-                        <form:input path="diseaseName" name="diseaseName" id="diseaseName" required="true"/>
-                    </div>
-                </div>
-                <div class="form-group row">
-                    <div class="col-md-3 text-right">
-                        <form:label path="diseaseDescription">Disease Description: </form:label>
-                    </div>
-                    <div class="col-md-8">
-                        <form:textarea path="diseaseDescription" name="diseaseDescription" id="diseaseDescription"
-                                       required="true"/>
-                    </div>
-                </div>
-                <div class="button-container offset-md-3">
-                    <form:button class="btn btn-outline-primary" id="submit" name="submit">Submit</form:button>
-                </div>
-                <c:if test="${message != null}">
-                    <div class="message offset-md-3 alert alert-success mt-3" role="alert">${message}</div>
-                </c:if>
-            </form:form>
+            <div class="container">
+                <p>User Info:</p>
+                <table class="table table-hover">
+                    <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Email</th>
+                        <th>Edit</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <c:forEach items="${memberList}" var="member">
+                        <tr>
+                            <td>${member.userName}</td>
+                            <td>${member.userEmail}</td>
+                            <td><a href="edit-user?id=${member.userId}">Edit</a></td>
+                        </tr>
+                    </c:forEach>
+                    </tbody>
+                </table>
+            </div>
         </div>
     </div>
 </div>

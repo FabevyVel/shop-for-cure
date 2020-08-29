@@ -3,6 +3,7 @@ package com.cts.model;
 public class Member {
     private int userId;
     private String userName;
+    private String userEmail;
     private String password;
     private Roles roles;
 
@@ -20,6 +21,14 @@ public class Member {
 
     public void setUserName(String userName) {
         this.userName = userName;
+    }
+
+    public String getUserEmail() {
+        return userEmail;
+    }
+
+    public void setUserEmail(String userEmail) {
+        this.userEmail = userEmail;
     }
 
     public String getPassword() {

@@ -32,6 +32,7 @@
                 <a class="nav-link" href="add-fruit">Add Fruit</a>
                 <a class="nav-link" href="add-herb">Add Herb</a>
                 <a class="nav-link active" href="add-remedy">Add Remedy</a>
+                <a class="nav-link" href="user-list">Users</a>
             </nav>
         </div>
         <div class="right-side-page col-md-10">

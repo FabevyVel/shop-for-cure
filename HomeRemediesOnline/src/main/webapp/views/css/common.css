@@ -32,3 +32,14 @@ nav {
 h3 {
     text-transform: capitalize;
 }
+
+.table {
+    background: #fff;
+}
+
+.table th td {
+    background-color: rgba(13, 184, 222,.4);
+}
+.table-hover tbody tr:hover {
+    background-color: rgba(13, 184, 222,.2);
+}

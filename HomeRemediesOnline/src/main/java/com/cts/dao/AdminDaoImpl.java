@@ -24,6 +24,27 @@ public class AdminDaoImpl implements AdminDao {
     JdbcTemplate jdbcTemplate;
 
     @Override
+    public List<Member> getMembersData() {
+        String getMembersQuery = "select * from members";
+        List<Member> memberList = jdbcTemplate.query(getMembersQuery, new MemberMapper());
+        return memberList;
+    }
+
+    @Override
+    public Member getMemberById(int membership_number) {
+        String getMemberQuery = "select * from members where membership_number="+membership_number;
+        List<Member> memberList = jdbcTemplate.query(getMemberQuery, new MemberMapper());
+        return memberList.get(0);
+    }
+
+    @Override
+    public void updateMemberById(Member member) {
+        //String setMemberQuery = "update members set username ='"+ member.getUserName()+ "' where membership_number="+member.getUserId();
+        String setMemberQuery = "update members set username ='"+member.getUserName()+"', useremail='" + member.getUserEmail() +"' where membership_number="+member.getUserId();
+        jdbcTemplate.update(setMemberQuery);
+    }
+
+    @Override
     public void addDisease(Disease disease) {
         String insertQuery = "insert into diseases (disease_name, disease_description) values (?,?)";
         jdbcTemplate.update(insertQuery, disease.getDiseaseName(), disease.getDiseaseDescription());
