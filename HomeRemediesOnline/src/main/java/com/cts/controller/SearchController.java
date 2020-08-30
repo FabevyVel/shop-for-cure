@@ -1,14 +1,14 @@
 package com.cts.controller;
 
 import com.cts.dao.SearchDao;
-import com.cts.model.Disease;
-import com.cts.model.Member;
-import com.cts.model.Remedy;
-import com.cts.model.SearchContent;
+import com.cts.model.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
+
+import javax.servlet.http.HttpServletRequest;
+import java.util.List;
 
 @Controller
 @SessionAttributes({"username" , "roles"})
@@ -26,20 +26,76 @@ public class SearchController {
         return view;
     }
 
+    @RequestMapping(value = "/get-info", method = RequestMethod.GET)
+    public ModelAndView getInfo(HttpServletRequest request) {
+        String searchTerm = request.getParameter("searchTerm");
+        String category = request.getParameter("category");
+        SearchContent content = new SearchContent();
+        content.setSearchTerm(searchTerm);
+        content.setCategory(category);
+        return processInfoRequest(content);
+    }
+
     @RequestMapping(value = "/searchInfo", method = RequestMethod.POST)
-    public ModelAndView searchDisease(@ModelAttribute("searchContent") SearchContent content) {
-        ModelAndView view = new ModelAndView("result");
-        Remedy remedy = null;
+    public ModelAndView searchInfo(@ModelAttribute("searchContent") SearchContent content) {
+        return processInfoRequest(content);
+    }
+
+    private ModelAndView processInfoRequest(SearchContent content){
+        ModelAndView view = null;
+        String searchTerm = content.getSearchTerm();
         try {
-            if("disease".equalsIgnoreCase(content.getCategory())) {
-                remedy = searchService.searchRemedyByDiseaseName(content.getSearchTerm());
-//                view.addObject("fruits", remedy.getFruitList());
-//                view.addObject("herbs", remedy.getHerbList());
+            if ("disease".equalsIgnoreCase(content.getCategory())) {
+                Remedy remedy = searchService.searchRemedyByDiseaseName(searchTerm);
+                if (remedy != null) {
+                    if(!remedy.getFruitList().isEmpty() && !remedy.getHerbList().isEmpty()){
+                        view = new ModelAndView("remedy-result", "remedy", remedy);
+                        view.addObject("searchContent", content);
+                    }
+                }else {
+                    List<Disease> diseases = searchService.getAllDiseases(searchTerm);
+                    if(!diseases.isEmpty()) {
+                        view = new ModelAndView("diseases", "diseaseList", diseases);
+                        view.addObject("searchContent", content);
+                    }
+                }
+            } else if ("fruit".equalsIgnoreCase(content.getCategory())) {
+                List<Disease> diseaseList = searchService.searchDiseaseByFruitName(searchTerm);
+                if (diseaseList != null) {
+                    view = new ModelAndView("disease-result", "diseases", diseaseList);
+                    view.addObject("searchContent", content);
+                }else{
+                    List<Fruit> fruits = searchService.getAllFruits(searchTerm);
+                    if(!fruits.isEmpty()) {
+                        view = new ModelAndView("fruits", "fruitList", fruits);
+                        view.addObject("searchContent", content);
+                    }
+                }
+            } else {
+                List<Disease> diseaseList = searchService.searchDiseaseByHerbName(searchTerm);
+                if (diseaseList != null) {
+                    view = new ModelAndView("disease-result", "diseases", diseaseList);
+                    view.addObject("searchContent", content);
+                }else{
+                    List<Herb> herbs = searchService.getAllHerbs(searchTerm);
+                    if(!herbs.isEmpty()) {
+                        view = new ModelAndView("herbs", "herbList", herbs);
+                        view.addObject("searchContent", content);
+                    }
+                }
             }
         } catch (Exception e) {
-            view.addObject("message", ERROR_MSG);
+            view = new ModelAndView("search");
+            view.addObject("searchResult", ERROR_MSG);
         }
-        view = new ModelAndView("result", "remedy", remedy);
+        if(view==null){
+            view = new ModelAndView("search");
+            String attributeVal = "disease".equalsIgnoreCase(content.getCategory()) ? "No remedies found for ":
+                                    "No results found for ";
+            view.addObject( "searchResult", attributeVal + content.getCategory() + " "
+                    + searchTerm);
+            view.addObject("searchContent", content);
+        }
         return view;
     }
 }

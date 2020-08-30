@@ -33,13 +33,12 @@
   <div class="container">
   
     <!-- Page Heading -->
-    <h2 class="mb-0 mt-5"><small>Remedial fruits for Disease ${searchContent.searchTerm}</small></h2>
+    <h2 class="mb-0 mt-5"><small>Remedial <strong>Fruits</strong> for Disease:</small> <strong>${searchContent.searchTerm}</strong> </h2>
     <br>
     <form:form method="post" action="addTocart" modelAttribute="remedy">
     <div class="row">
       <c:forEach items="${remedy.fruitList}" var="fruit" varStatus="status">
         <div class="col-lg-4 col-sm-6 mb-4">
-          <h3 class="mt-0 mb-2">${fruit.fruitName}</h3>
           <div class="card h-100">
             <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
             <div class="card-body">
@@ -50,9 +49,19 @@
               <p class="card-text">Price/Kg : ${fruit.fruitCost}</p>
             </div>
             <div class="card-footer">
-              <label for="">Qty in kg</label>
-              <input type="text" name="" id="" />
-              <input type="button" class="btn btn-primary" value="Add to cart">
+              <div class="form-row form-row-1 align-items-center">
+                <div class="col-auto">
+                  <div class="input-group mb-2">
+                    <div class="input-group-prepend">
+                      <div class="input-group-text">Qty (Kg)</div>
+                    </div>
+                    <input type="number" class="form-control" value="0">
+                  </div>
+                </div>
+                <div class="col-auto">
+                  <button type="submit" class="btn btn-primary mb-2">Add To Cart</button>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -60,13 +69,12 @@
     </div>
     </form:form>
 
-    <h2 class="mb-0 mt-5"><small>Remdial herbs for Disease ${searchContent.searchTerm}</small></h2>
+    <h2 class="mb-0 mt-5"><small>Remedial <strong>Herbs</strong> for Disease:</small> <strong>${searchContent.searchTerm}</strong> </h2>
     <br>
     <form:form method="post" action="addTocart" modelAttribute="remedy">
     <div class="row">
       <c:forEach items="${remedy.herbList}" var="herb" varStatus="status">
         <div class="col-lg-4 col-sm-6 mb-4">
-          <h3 class="mt-0 mb-2">${herb.herbName}</h3>
           <div class="card h-100">
             <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
             <div class="card-body">
@@ -76,9 +84,19 @@
               <p class="card-text">${herb.herbDescription}</p>
             </div>
             <div class="card-footer">
-              <label for="">Qty in Kg</label>
-              <input type="text" name="" id="t" />
-              <input type="button" class="btn btn-primary" value="Add to cart">
+              <div class="form-row form-row-1 align-items-center">
+                <div class="col-auto">
+                  <div class="input-group mb-2">
+                    <div class="input-group-prepend">
+                      <div class="input-group-text">Qty (Kg)</div>
+                    </div>
+                    <input type="number" class="form-control" value="0">
+                  </div>
+                </div>
+                <div class="col-auto">
+                  <button type="submit" class="btn btn-primary mb-2">Add To Cart</button>
+                </div>
+              </div>
             </div>
           </div>
         </div>

@@ -1,6 +1,6 @@
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1" %>
-<%@ page session = "false" %>
+<%@ page session = "true" %>
 <%@ page import = "java.io.*,java.util.*" %>
 <%@ taglib prefix = "c" uri = "http://java.sun.com/jsp/jstl/core" %>
 
@@ -19,7 +19,6 @@
     </style>
 </head>
 <body>
-
   <!-- Navigation -->
   <nav class="navbar navbar-light static-top">
       <a class="navbar-brand" href="search">Shop For Cure</a>
@@ -49,20 +48,18 @@
                 </div>
                 
               <div class="col-12 col-md-2">
-                <button type="submit" class="btn-block btn-lg btn btn-outline-primary">Search</button>
+                <button type="submit" class="btn-block btn-lg btn btn-primary btn-outline-primary">Search</button>
               </div>
             </div>
+
+              <c:if test = "${searchResult != null}">
+                  <div class="alert alert-danger" role="alert">${searchResult}</div>
+              </c:if>
           </form:form>
         </div>
       </div>
     </div>
   </header>
-  <table align="right">
-      <tr>
-          <td><a href="logOut">LogOut</a>
-          </td>
-      </tr>
-  </table>
 <script>
 </script>
 </body>

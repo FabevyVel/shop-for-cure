@@ -2,7 +2,12 @@ body {
     background: #f1f1f1;
     font-family: 'Roboto', sans-serif;
 }
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
 
+    opacity: 1;
+
+}
 header.masthead {
     position: relative;
     background-color: #343a40;
@@ -92,9 +97,6 @@ input[type=password]{
     margin-bottom: 20px;
     padding: 0px 10px;
 }
-.form-control::placeholder{
-    color: #fff;
-}
 .form-control{
     border-bottom: 2px solid #0DB8DE;
 }
@@ -157,4 +159,40 @@ label {
 
 .loginbttm {
     padding: 0px;
+}
+
+.form-row-1{
+
+}
+.form-row-1 .form-control{
+    display: inline-block;
+    max-width: 80px;
+    text-align: center;
+    color: #000;
+    background: #fff;
+    border: 1px solid #ced4da;
+    border-radius: 0 4px 4px 0;
+}
+.form-row-1 .btn-primary{
+
+}
+#searchForm .form-control{
+    color: #fff;
+}
+#searchForm .form-control option{
+    color: #000;
+}
+#searchForm .form-control:focus{
+    background: transparent;
+}
+#searchForm .form-control::placeholder{
+    color: #fff;
+}
+#searchForm .btn-primary{
+    background: #fff;
+    border: none;
+}
+#searchForm .btn-primary:hover,
+#searchForm .btn-primary:focus{
+    background: #007bff;
 }
